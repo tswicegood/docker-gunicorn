@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ -z "$PORT" ]]; then
+  PORT=8000
+fi
+
+HOST="0.0.0.0"
+
+cd /app
+/opt/anaconda/bin/gunicorn --bind $HOST:$PORT $@
