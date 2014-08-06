@@ -1,7 +1,0 @@
-#!/bin/bash
-if [[ ! -d /app ]]; then
-  echo "Please mount a data volume to /app with your application and re-run" >&2
-  exit 1
-fi
-export PYTHONUNBUFFERED=1
-/opt/anaconda/bin/gunicorn --config=/etc/gunicorn/config.py $@
